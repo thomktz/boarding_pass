@@ -15,7 +15,8 @@ TOP_BANNER_H = 210
 
 OUTPUT_PATH = "boarding_pass.png"
 
-FONT_REGULAR = "assets/fonts/RobotoCondensed-ExtraBold.ttf"
+FONT_REGULAR = "assets/fonts/RobotoCondensed-ExtraBoldItalic.ttf"
+
 FONT_BOLD = "assets/fonts/Oswald-SemiBold.ttf"
 PLANE_PATH = "assets/plane.png"
 WORLD_MAP_PATH = "assets/world_map.webp"
