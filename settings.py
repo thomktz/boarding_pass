@@ -1,0 +1,55 @@
+# settings.py
+AIRLINE_NAME = "AIR PETITKIENTZ"
+
+CANVAS_W = 2400
+CANVAS_H = 850
+
+BACKGROUND_COLOR = (235, 238, 241)  # subtle grey
+SIDE_PANEL_TOP_BANNER_COLOR = (8, 95, 125)
+DOT_COLOR = (255, 255, 255)
+DOT_RADIUS = 9
+DOT_SPACING = 38
+
+TOP_BANNER_COLOR = (20, 165, 195)
+TOP_BANNER_H = 210
+
+OUTPUT_PATH = "boarding_pass.png"
+
+FONT_REGULAR = "assets/fonts/RobotoCondensed-ExtraBold.ttf"
+FONT_BOLD = "assets/fonts/Oswald-SemiBold.ttf"
+PLANE_PATH = "assets/plane.png"
+WORLD_MAP_PATH = "assets/world_map.webp"
+
+WORLD_MAP_OPACITY = 0.2
+TOP_BANNER_OPACITY = 0.7
+SIDE_PANNEL_RATIO = 0.75
+
+PASSENGER_LABEL_COLOR = (90, 95, 100)
+PASSENGER_VALUE_COLOR = (20, 20, 20)
+
+PASSENGER_LABEL_FONT_SIZE = 37
+PASSENGER_VALUE_FONT_SIZE = 52
+
+ORIGIN_CITY = "BORDEAUX"
+DESTINATION_CITY = "LOS ANGELES"
+
+QR_PAYLOAD = "https://wedding-app-dev-zeta.vercel.app"
+QR_SIZE = 250
+
+SIDE_PANEL_X_PAD = 150
+SIDE_PANEL_TEXT_COLOR = (20, 20, 20)
+
+BARCODE_W = 360
+BARCODE_H = 90
+
+AIRPORT_CODES = {
+    "KYOTO": "KYO",
+    "LOS ANGELES": "LAX",
+    "BORDEAUX": "BDX",
+    "KOUROU": "KOU",
+    "MARRAKECH": "RAK",
+    "SYDNEY": "SYD",
+    "BERLIN": "BER",
+    "NAIROBI": "NBO",
+    "REYKJAVIK": "REK",
+}
