@@ -1,5 +1,6 @@
 # main.py
 
+import csv
 from PIL import Image, ImageDraw, ImageFont
 import settings
 import qrcode
@@ -257,13 +258,12 @@ def render_boarding_pass(
     )
     return img
 
-guests = [
-    {"name": "THOMAS KIENTZ", "destination": "KYOTO", "flight": "PK042", "seat": "1A", "gate": "B12", "boarding": "08:00", "arrival": "15:00", "booking": "ABC123xyz6a7b8c9d"},
-    {"name": "PAULINE BIDAULT", "destination": "KYOTO", "flight": "PK042", "seat": "1B", "gate": "B12", "boarding": "08:00", "arrival": "15:00", "booking": "DEF456uvw7c8d9e0f"},
-    {"name": "SERGE BIDAULT", "destination": "MARRAKECH", "flight": "PK047", "seat": "2D", "gate": "C21", "boarding": "10:00", "arrival": "13:00", "booking": "GHI789xyz1a2b3c4d"},
-]
+def load_guests(csv_path: str = "guests.csv") -> list[dict]:
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
 
 if __name__ == "__main__":
+    guests = load_guests()
     for guest in guests:
         name = guest["name"]
         boarding_pass = render_boarding_pass(origin=settings.ORIGIN_CITY, **guest)
