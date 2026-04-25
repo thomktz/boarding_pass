@@ -7,6 +7,7 @@
 boarding_pass/
 ├── main.py              # Guest list & entry point
 ├── settings.py          # All visual & content configuration
+├── requirements.txt     # Python dependencies
 ├── assets/
 │   ├── fonts/           # Roboto Condensed & Oswald font files
 │   ├── plane.png        # Plane icon used on the pass
@@ -17,10 +18,16 @@ boarding_pass/
 
 ## Requirements
 
-Install dependencies with pip:
+Install dependencies manually with pip:
 
 ```bash
 pip install Pillow qrcode
+```
+
+You can also install from the requirements file:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage
