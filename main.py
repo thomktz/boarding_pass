@@ -4,6 +4,7 @@ import csv
 from PIL import Image, ImageDraw, ImageFont
 import settings
 import qrcode
+import urllib.parse
 
 def load_font(path: str, size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size)
@@ -188,14 +189,14 @@ def add_passenger_info(
     draw_field("Departure", boarding, 1300, 650)
     draw_field("Arrival", arrival, 1550, 650)
     
-def draw_qr_code(img: Image.Image, x=120, y=520, size=settings.QR_SIZE) -> None:
+def draw_qr_code(img: Image.Image, x=120, y=520, size=settings.QR_SIZE, name: str = "") -> None:
     qr = qrcode.QRCode(
         version=None,  # let it pick smallest possible
         error_correction=qrcode.constants.ERROR_CORRECT_M,  # lower than H → smaller
         box_size=6,   # smaller modules
         border=1,     # default is 4 → this saves a LOT of space
     )
-    qr.add_data(settings.QR_PAYLOAD)
+    qr.add_data(settings.QR_PAYLOAD+f"/?name={urllib.parse.quote(name)}")
     qr.make(fit=True)
 
     qr_img = qr.make_image(
@@ -232,7 +233,7 @@ def render_boarding_pass(
     draw_top_banner(img, draw, booking=booking)
     draw_side_panel_dots(draw)
     draw_destination(draw, origin, destination)
-    draw_qr_code(img)
+    draw_qr_code(img, name=name.split(" ")[0])
     draw_side_panel(
         img, 
         draw,
