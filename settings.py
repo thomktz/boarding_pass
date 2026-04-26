@@ -34,7 +34,7 @@ PASSENGER_VALUE_FONT_SIZE = 52
 ORIGIN_CITY = "BORDEAUX"
 DESTINATION_CITY = "LOS ANGELES"
 
-QR_PAYLOAD = "https://wedding-app-dev-zeta.vercel.app"
+QR_PAYLOAD = "https://mariage.kientz.net"
 QR_SIZE = 250
 
 SIDE_PANEL_X_PAD = 150
